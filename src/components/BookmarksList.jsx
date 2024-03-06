@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line import/extensions
-import { fetchAllBookmarks } from "./services/api/bookmarks.js";
+import { fetchAllBookmarks } from "../services/api/bookmarks.js";
 
 function BookmarksList() {
   const [bookmarksData, setBookmarksData] = useState([]);
