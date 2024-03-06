@@ -1,12 +1,14 @@
-import { React } from "react";
-// eslint-disable-next-line import/no-unresolved
-import "./App.css";
+import React from "react";
+// eslint-disable-next-line import/extensions
+import BookmarksList from "./components/BookmarksList.jsx";
 
 function App() {
   return (
     <>
       <header />
-      <main />
+      <main>
+        <BookmarksList />
+      </main>
       <footer />
     </>
   );
