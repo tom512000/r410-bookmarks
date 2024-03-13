@@ -9,7 +9,9 @@ export function avatarUrl(userId) {
     response.json(),
   );
 
-  return `${BASE_URL}/users/${data.id}/avatar`;
+  data.then(() => {
+    return `${BASE_URL}/users/${data.id}/avatar`;
+  });
 }
 
 export { fetchAllBookmarks };

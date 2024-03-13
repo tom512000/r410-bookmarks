@@ -8,13 +8,13 @@ import { BASE_URL, avatarUrl } from "../services/api/bookmarks.js";
 
 function BookmarkItem({ data }) {
   return (
-    <section>
+    <article>
       <Rating value={data.rateAverage} />
-      <article>
+      <div>
         <a href={`${BASE_URL}/bookmarks/${data.id}`}>{data.name}</a>
-      </article>
+      </div>
       <img src={avatarUrl(data.owner)} alt="Avatar de l'utilisateur" />
-    </section>
+    </article>
   );
 }
 
