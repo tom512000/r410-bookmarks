@@ -7,13 +7,17 @@ import Rating from "./Rating.jsx";
 import { BASE_URL, avatarUrl } from "../services/api/bookmarks.js";
 
 function BookmarkItem({ data }) {
+  const ownerId = data.owner.split("/")[3];
+
   return (
     <article>
       <Rating value={data.rateAverage} />
       <div>
         <a href={`${BASE_URL}/bookmarks/${data.id}`}>{data.name}</a>
       </div>
-      <img src={avatarUrl(data.owner)} alt="Avatar de l'utilisateur" />
+      <a href={`/users/${ownerId}`}>
+        <img src={avatarUrl(data.owner)} alt="Avatar de l'utilisateur" />
+      </a>
     </article>
   );
 }

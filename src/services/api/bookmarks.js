@@ -1,17 +1,9 @@
-export const BASE_URL = "https://iut-rcc-infoapi.univ-reims.fr/bookmarks";
+export const BASE_URL = "https://iut-rcc-infoapi.univ-reims.fr";
 
-function fetchAllBookmarks() {
-  return fetch(`${BASE_URL}/bookmarks`).then((response) => response.json());
+export function fetchAllBookmarks() {
+  return fetch(`${BASE_URL}/bookmarks/bookmarks`).then((response) => response.json());
 }
 
 export function avatarUrl(userId) {
-  const data = fetch(`${BASE_URL}${userId}`).then((response) =>
-    response.json(),
-  );
-
-  data.then(() => {
-    return `${BASE_URL}/users/${data.id}/avatar`;
-  });
+  return `${BASE_URL}${userId}/avatar`;
 }
-
-export { fetchAllBookmarks };
